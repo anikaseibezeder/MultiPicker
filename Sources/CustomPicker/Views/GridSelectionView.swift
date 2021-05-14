@@ -77,24 +77,19 @@ struct GridSelectionView<SelectionValue>: View where SelectionValue: Identifiabl
 }
 
 struct GridSelectionView_Previews: PreviewProvider {
-    struct IdentifiableString: Identifiable, Hashable {
-        let string: String
-        var id: String { string }
-    }
-    
     static let options = [
         "Option 1",
         "Option 2",
         "Option 3"
     ]
 
-    @State static var selectedOptions = Set<IdentifiableString>()
+    @State static var selectedOptions = Set<String>()
     
     static var previews: some View {
         GridSelectionView(selection: $selectedOptions,
                           customPickerStyle: GridPickerStyle(),
-                          options: ["": options.map { IdentifiableString(string: $0) }]) {
-            $0.string
+                          options: ["": options]) {
+            $0
         }
     }
 }
