@@ -97,4 +97,3 @@ struct CustomPicker_Previews: PreviewProvider {
         }
     }
 }
-
