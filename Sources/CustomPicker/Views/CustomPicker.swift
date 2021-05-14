@@ -15,7 +15,7 @@ public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifia
     var optionToString: (SelectionValue) -> String
     private var viewModel: CustomPickerViewModel<SelectionValue>
 
-    init<S>(_ title: S,
+    public init<S>(_ title: S,
             selection: Binding<Set<SelectionValue>>,
             options: [String: [SelectionValue]],
             optionToString: @escaping (SelectionValue) -> String) where S: StringProtocol {
@@ -27,7 +27,7 @@ public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifia
                                               optionToString: optionToString)
     }
     
-    init<S>(_ title: S,
+    public init<S>(_ title: S,
             selection: Binding<Set<SelectionValue>>,
             options: [SelectionValue],
             optionToString: @escaping (SelectionValue) -> String) where S: StringProtocol {
