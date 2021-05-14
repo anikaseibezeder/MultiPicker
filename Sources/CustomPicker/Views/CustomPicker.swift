@@ -47,15 +47,15 @@ struct CustomPicker<SelectionValue>: View where SelectionValue: Identifiable & H
                                   options: options,
                                   optionToString: optionToString)
             } else if let customPickerStyle = customPickerStyle as? DefaultCustomPickerStyle {
-                CustomSelectionView(selection: selection,
-                                    customPickerStyle: customPickerStyle,
-                                    options: options,
-                                    optionToString: optionToString)
+                DefaultCustomSelectionView(selection: selection,
+                                           customPickerStyle: customPickerStyle,
+                                           options: options,
+                                           optionToString: optionToString)
             } else {
-                CustomSelectionView(selection: selection,
-                                    customPickerStyle: DefaultCustomPickerStyle(),
-                                    options: options,
-                                    optionToString: optionToString)
+                DefaultCustomSelectionView(selection: selection,
+                                           customPickerStyle: DefaultCustomPickerStyle(),
+                                           options: options,
+                                           optionToString: optionToString)
             }
         }
     }
