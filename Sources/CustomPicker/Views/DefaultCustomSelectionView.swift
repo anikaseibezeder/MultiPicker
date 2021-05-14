@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct DefaultCustomSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
+public struct DefaultCustomSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var selection: Set<SelectionValue>
     var customPickerStyle: DefaultCustomPickerStyle
     var options: [String: [SelectionValue]]
     var optionToString: (SelectionValue) -> String
 
-    var body: some View {
+    public var body: some View {
         List {
             ForEach(options.keys.sorted()) { section in
                 Section(header: HStack {

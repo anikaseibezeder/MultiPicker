@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct GridSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
+public struct GridSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var selection: Set<SelectionValue>
     var customPickerStyle: GridPickerStyle
@@ -28,7 +28,7 @@ struct GridSelectionView<SelectionValue>: View where SelectionValue: Identifiabl
                                   count: customPickerStyle.columns)
     }
     
-    var body: some View {
+    public var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(options.keys.sorted()) { section in

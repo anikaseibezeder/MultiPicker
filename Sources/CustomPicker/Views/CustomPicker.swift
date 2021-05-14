@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomPicker<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
+public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
     @Environment(\.customPickerStyle) var customPickerStyle: CustomPickerStyle
     var label: Text
     var selection: Binding<Set<SelectionValue>>
@@ -60,7 +60,7 @@ struct CustomPicker<SelectionValue>: View where SelectionValue: Identifiable & H
         }
     }
 
-    var body: some View {
+    public var body: some View {
         NavigationLink(destination: destination) {
             HStack {
                 label

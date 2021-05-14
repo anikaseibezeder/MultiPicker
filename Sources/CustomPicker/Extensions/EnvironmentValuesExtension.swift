@@ -12,7 +12,7 @@ private struct CustomPickerStyleKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    var customPickerStyle: CustomPickerStyle {
+    public var customPickerStyle: CustomPickerStyle {
         get {
             self[CustomPickerStyleKey.self]
         }

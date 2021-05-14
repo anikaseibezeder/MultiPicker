@@ -8,11 +8,13 @@
 import Foundation
 
 extension String {
+    
     func capitalizeFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
 }
 
 extension String: Identifiable {
+    
     public var id: String { self }
 }

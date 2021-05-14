@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     
-    func customPickerStyle<Style>(_ style: Style) -> some View where Style: CustomPickerStyle {
+    public func customPickerStyle<Style>(_ style: Style) -> some View where Style: CustomPickerStyle {
         self.environment(\.customPickerStyle, style)
     }
 }

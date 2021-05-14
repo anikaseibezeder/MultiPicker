@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol CustomPickerStyle {
+public protocol CustomPickerStyle {
     var allowsMultipleSelection: Bool { get }
 }
 
-struct DefaultCustomPickerStyle: CustomPickerStyle {
-    let allowsMultipleSelection: Bool
+public struct DefaultCustomPickerStyle: CustomPickerStyle {
+    public let allowsMultipleSelection: Bool
     
-    init(allowsMultipleSelection: Bool = true) {
+    public init(allowsMultipleSelection: Bool = true) {
         self.allowsMultipleSelection = allowsMultipleSelection
     }
 }
 
-struct GridPickerStyle: CustomPickerStyle {
-    let allowsMultipleSelection: Bool
-    let columns: Int
+public struct GridPickerStyle: CustomPickerStyle {
+    public let allowsMultipleSelection: Bool
+    public let columns: Int
     
-    init(columns: Int = 4, allowsMultipleSelection: Bool = false) {
+    public init(columns: Int = 4, allowsMultipleSelection: Bool = false) {
         self.columns = columns
         self.allowsMultipleSelection = allowsMultipleSelection
     }
