@@ -1,11 +1,50 @@
-    import XCTest
-    @testable import CustomPicker
+//
+//  CustomPickerViewModelTests.swift
+//
+//
+//  Created by Anika Seibezeder on 13.05.21.
+//
 
-    final class CustomPickerTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(CustomPicker().text, "Hello, World!")
-        }
+import XCTest
+@testable import CustomPicker
+
+class CustomPickerViewModelTests: XCTestCase {
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    // MARK: - Test functions
+
+    func testSelectedOptionsTextEmpty() throws {
+        let selection = Set<String>()
+
+        let viewModel = CustomPickerViewModel(selection: selection,
+                                              optionToString: { $0 })
+
+        XCTAssertEqual("", viewModel.selectedOptionsText)
+    }
+    
+    func testSelectedOptionsTextOneItem() throws {
+        let selection: Set<String> = ["Option 1"]
+
+        let viewModel = CustomPickerViewModel(selection: selection,
+                                              optionToString: { $0 })
+
+        XCTAssertEqual("Option 1", viewModel.selectedOptionsText)
+    }
+    
+    func testSelectedOptionsTextTwoItems() throws {
+        let selection: Set<String> = ["Option 1", "Option 2"]
+
+        let viewModel = CustomPickerViewModel(selection: selection,
+                                              optionToString: { $0 })
+
+        XCTAssertEqual("2 Selected", viewModel.selectedOptionsText)
+    }
+}
+
