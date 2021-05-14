@@ -33,4 +33,3 @@ class CustomPickerViewModel<SelectionValue>: NSObject where SelectionValue: Hash
         self.optionToString = optionToString
     }
 }
-
