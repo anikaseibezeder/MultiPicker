@@ -30,12 +30,45 @@ https://github.com/anikaseibezeder/MultiPicker.git
    and what you want to use as the label of those options.
 
 ```swift
+private let options = ["Option 1", "Option 2"]
+
 MultiPicker("Options",
-            selection: $selectedOptionsDefaultStyle,
-            options: optionsDefaultStyle) { $0 }
+            selection: $selection,
+            options: options) { $0 }
 ```
 
 ## Styling
+
+### DefaultMultiPickerStyle
+
+> Displays the options similar as the default `Picker`.
+
+#### Properties
+
+* `allowsMultipleSelection` - define if the Picker should allow multiple selection
+
+#### Apply by adding
+
+```swift
+.multiPickerStyle(DefaultMultiPickerStyle(allowsMultipleSelection: true))
+```
+
+
+### GridPickerStyle
+
+> Displays the options in a grid.
+
+#### Properties
+
+* `columns` - define how many columns should be used to display the options
+* `allowsMultipleSelection` - define if the Picker should allow multiple selection
+
+#### Apply by adding
+
+```swift
+.multiPickerStyle(GridPickerStyle(columns: 5, 
+                                  allowsMultipleSelection: true))
+```
 
 ## Demo
 
