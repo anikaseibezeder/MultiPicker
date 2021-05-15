@@ -6,7 +6,9 @@
 
 **MultiPicker** helps you create Pickers which allow multiple selection in your `SwiftUI` apps.
 
-![Demo](Resources/Demo.mp4)
+<p align="center">
+    <img src="Resources/Demo.gif" width=300 />
+</p>
 
 ## Installation
 
