@@ -11,7 +11,7 @@
 		8409C3F2264FC638003B5A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409C3F1264FC638003B5A22 /* ContentView.swift */; };
 		8409C3F4264FC639003B5A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8409C3F3264FC639003B5A22 /* Assets.xcassets */; };
 		8409C3F7264FC639003B5A22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8409C3F6264FC639003B5A22 /* Preview Assets.xcassets */; };
-		8420A321264FCE3E000689C1 /* MultiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 8420A320264FCE3E000689C1 /* MultiPicker */; };
+		844EA8F7264FD27E00340D9C /* MultiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 844EA8F6264FD27E00340D9C /* MultiPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8420A321264FCE3E000689C1 /* MultiPicker in Frameworks */,
+				844EA8F7264FD27E00340D9C /* MultiPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				8420A320264FCE3E000689C1 /* MultiPicker */,
+				844EA8F6264FD27E00340D9C /* MultiPicker */,
 			);
 			productName = Demo;
 			productReference = 8409C3EC264FC638003B5A22 /* Demo.app */;
@@ -118,7 +118,7 @@
 			);
 			mainGroup = 8409C3E3264FC638003B5A22;
 			packageReferences = (
-				8420A31F264FCE3E000689C1 /* XCRemoteSwiftPackageReference "MultiPicker" */,
+				844EA8F5264FD27E00340D9C /* XCRemoteSwiftPackageReference "MultiPicker" */,
 			);
 			productRefGroup = 8409C3ED264FC638003B5A22 /* Products */;
 			projectDirPath = "";
@@ -338,20 +338,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8420A31F264FCE3E000689C1 /* XCRemoteSwiftPackageReference "MultiPicker" */ = {
+		844EA8F5264FD27E00340D9C /* XCRemoteSwiftPackageReference "MultiPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/anikaseibezeder/MultiPicker";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8420A320264FCE3E000689C1 /* MultiPicker */ = {
+		844EA8F6264FD27E00340D9C /* MultiPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8420A31F264FCE3E000689C1 /* XCRemoteSwiftPackageReference "MultiPicker" */;
+			package = 844EA8F5264FD27E00340D9C /* XCRemoteSwiftPackageReference "MultiPicker" */;
 			productName = MultiPicker;
 		};
 /* End XCSwiftPackageProductDependency section */

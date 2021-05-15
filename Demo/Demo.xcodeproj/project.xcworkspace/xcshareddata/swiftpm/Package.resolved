@@ -5,9 +5,9 @@
         "package": "MultiPicker",
         "repositoryURL": "https://github.com/anikaseibezeder/MultiPicker",
         "state": {
-          "branch": "main",
-          "revision": "aaf3fccbeef94d784e4340dad00cc3eda787a10b",
-          "version": null
+          "branch": null,
+          "revision": "2d053faaefce50cc4b1d280baaa43263a40aec67",
+          "version": "0.0.1"
         }
       }
     ]
