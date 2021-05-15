@@ -20,6 +20,21 @@ https://github.com/anikaseibezeder/MultiPicker.git
 
 ## Usage
 
+1. Add a `Set`, which will later on hold the selected values.
+
+```swift
+@State private var selection = Set<String>()
+```
+
+2. Add the `MultiPicker` to your view by providing a `title`, the `selection` Set, an array containing the available `options` 
+   and what you want to use as the label of those options.
+
+```swift
+MultiPicker("Options",
+            selection: $selectedOptionsDefaultStyle,
+            options: optionsDefaultStyle) { $0 }
+```
+
 ## Styling
 
 ## Demo
