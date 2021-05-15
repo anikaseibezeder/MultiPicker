@@ -29,4 +29,4 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app && /usr/bin/xcodebuild -version
         
       - name: Run unit tests
-        run: xcodebuild test -scheme MultiPicker -project MultiPicker.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild test -scheme MultiPicker -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' | xcpretty && exit ${PIPESTATUS[0]}
