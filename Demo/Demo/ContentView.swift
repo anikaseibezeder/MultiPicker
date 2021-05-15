@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("DefaultMultiPickerStyle")) {
+                Section(header: Text("Default Multi Picker Style")) {
                     Toggle("Allows multiple selection", isOn: $allowsMultipleSelectionDefaultStyle)
                     
                     MultiPicker("Options",
@@ -32,7 +32,7 @@ struct ContentView: View {
                     .multiPickerStyle(DefaultMultiPickerStyle(allowsMultipleSelection: allowsMultipleSelectionDefaultStyle))
                 }
                 
-                Section(header: Text("GridPickerStyle")) {
+                Section(header: Text("Grid Picker Style")) {
                     Toggle("Allows multiple selection", isOn: $allowsMultipleSelectionGridStyle)
                     
                     MultiPicker("Options",
