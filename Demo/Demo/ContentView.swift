@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CustomPicker
+import MultiPicker
 
 struct ContentView: View {
     @State private var selectedOptionsDefaultStyle = Set<String>()
@@ -24,23 +24,23 @@ struct ContentView: View {
                 Section(header: Text("DefaultMultiPickerStyle")) {
                     Toggle("Allows multiple selection", isOn: $allowsMultipleSelectionDefaultStyle)
                     
-                    CustomPicker("Options",
+                    MultiPicker("Options",
                                  selection: $selectedOptionsDefaultStyle,
                                  options: optionsDefaultStyle) {
                         $0
                     }
-                    .customPickerStyle(DefaultCustomPickerStyle(allowsMultipleSelection: allowsMultipleSelectionDefaultStyle))
+                    .multiPickerStyle(DefaultMultiPickerStyle(allowsMultipleSelection: allowsMultipleSelectionDefaultStyle))
                 }
                 
                 Section(header: Text("GridPickerStyle")) {
                     Toggle("Allows multiple selection", isOn: $allowsMultipleSelectionGridStyle)
                     
-                    CustomPicker("Options",
+                    MultiPicker("Options",
                                  selection: $selectedOptionsGridStyle,
                                  options: optionsGridStyle) {
                         $0
                     }
-                    .customPickerStyle(GridPickerStyle(columns: 5, allowsMultipleSelection: allowsMultipleSelectionGridStyle))
+                    .multiPickerStyle(GridPickerStyle(columns: 5, allowsMultipleSelection: allowsMultipleSelectionGridStyle))
                 }
             }
             .navigationTitle("MultiPicker Demo")

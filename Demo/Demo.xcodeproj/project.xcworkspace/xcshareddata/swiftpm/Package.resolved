@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CustomPicker",
+        "package": "MultiPicker",
         "repositoryURL": "https://github.com/anikaseibezeder/MultiPicker",
         "state": {
-          "branch": null,
-          "revision": "45e1662ca395f09fabb0f48b49cd2f7cb55a6c8d",
-          "version": "0.1.2"
+          "branch": "main",
+          "revision": "aaf3fccbeef94d784e4340dad00cc3eda787a10b",
+          "version": null
         }
       }
     ]
