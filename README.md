@@ -41,7 +41,7 @@ MultiPicker("Options",
 
 ### DefaultMultiPickerStyle
 
-> Displays the options similar as the default `Picker`.
+> Displays the options similar to the default `SwiftUI Picker`.
 
 #### Properties
 
