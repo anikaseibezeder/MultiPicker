@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CustomPicker",
+        "repositoryURL": "https://github.com/anikaseibezeder/MultiPicker",
+        "state": {
+          "branch": null,
+          "revision": "45e1662ca395f09fabb0f48b49cd2f7cb55a6c8d",
+          "version": "0.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
