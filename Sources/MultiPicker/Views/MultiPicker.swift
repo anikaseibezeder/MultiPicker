@@ -1,5 +1,5 @@
 //
-//  CustomPicker.swift
+//  MultiPicker.swift
 //  
 //
 //  Created by Anika Seibezeder on 13.05.21.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
-    @Environment(\.customPickerStyle) var customPickerStyle: CustomPickerStyle
+public struct MultiPicker<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
+    @Environment(\.multiPickerStyle) var multiPickerStyle: MultiPickerStyle
     var label: Text
     var selection: Binding<Set<SelectionValue>>
     var options: [String: [SelectionValue]]
     var optionToString: (SelectionValue) -> String
-    private var viewModel: CustomPickerViewModel<SelectionValue>
+    private var viewModel: MultiPickerViewModel<SelectionValue>
 
     public init<S>(_ title: S,
             selection: Binding<Set<SelectionValue>>,
@@ -23,7 +23,7 @@ public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifia
         self.selection = selection
         self.options = options
         self.optionToString = optionToString
-        self.viewModel = CustomPickerViewModel(selection: selection.wrappedValue,
+        self.viewModel = MultiPickerViewModel(selection: selection.wrappedValue,
                                               optionToString: optionToString)
     }
     
@@ -35,25 +35,25 @@ public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifia
         self.selection = selection
         self.options = ["": options]
         self.optionToString = optionToString
-        self.viewModel = CustomPickerViewModel(selection: selection.wrappedValue,
+        self.viewModel = MultiPickerViewModel(selection: selection.wrappedValue,
                                               optionToString: optionToString)
     }
     
     private var destination: some View {
         Group {
-            if let customPickerStyle = customPickerStyle as? GridPickerStyle {
+            if let multiPickerStyle = multiPickerStyle as? GridPickerStyle {
                 GridSelectionView(selection: selection,
-                                  customPickerStyle: customPickerStyle,
+                                  multiPickerStyle: multiPickerStyle,
                                   options: options,
                                   optionToString: optionToString)
-            } else if let customPickerStyle = customPickerStyle as? DefaultCustomPickerStyle {
-                DefaultCustomSelectionView(selection: selection,
-                                           customPickerStyle: customPickerStyle,
+            } else if let multiPickerStyle = multiPickerStyle as? DefaultMultiPickerStyle {
+                DefaultMultiSelectionView(selection: selection,
+                                           multiPickerStyle: multiPickerStyle,
                                            options: options,
                                            optionToString: optionToString)
             } else {
-                DefaultCustomSelectionView(selection: selection,
-                                           customPickerStyle: DefaultCustomPickerStyle(),
+                DefaultMultiSelectionView(selection: selection,
+                                           multiPickerStyle: DefaultMultiPickerStyle(),
                                            options: options,
                                            optionToString: optionToString)
             }
@@ -73,7 +73,7 @@ public struct CustomPicker<SelectionValue>: View where SelectionValue: Identifia
     }
 }
 
-struct CustomPicker_Previews: PreviewProvider {
+struct MultiPicker_Previews: PreviewProvider {
     static let options = [
         "Option 1",
         "Option 2",
@@ -84,7 +84,7 @@ struct CustomPicker_Previews: PreviewProvider {
 
     static var previews: some View {
         NavigationView {
-            CustomPicker("Options",
+            MultiPicker("Options",
                         selection: $selectedOptions,
                         options: options) {
                 $0

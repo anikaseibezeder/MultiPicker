@@ -10,22 +10,22 @@ import SwiftUI
 public struct GridSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var selection: Set<SelectionValue>
-    var customPickerStyle: GridPickerStyle
+    var multiPickerStyle: GridPickerStyle
     var options: [String: [SelectionValue]]
     var optionToString: (SelectionValue) -> String
     
     private var columns: [GridItem]
     
     init(selection: Binding<Set<SelectionValue>>,
-         customPickerStyle: GridPickerStyle,
+         multiPickerStyle: GridPickerStyle,
          options: [String: [SelectionValue]],
          optionToString: @escaping (SelectionValue) -> String) {
         self._selection = selection
-        self.customPickerStyle = customPickerStyle
+        self.multiPickerStyle = multiPickerStyle
         self.options = options
         self.optionToString = optionToString
         self.columns = [GridItem](repeating: GridItem(.flexible()),
-                                  count: customPickerStyle.columns)
+                                  count: multiPickerStyle.columns)
     }
     
     public var body: some View {
@@ -42,7 +42,7 @@ public struct GridSelectionView<SelectionValue>: View where SelectionValue: Iden
                     }) {
                         ForEach(options[section] ?? []) { option in
                             Button {
-                                if !customPickerStyle.allowsMultipleSelection {
+                                if !multiPickerStyle.allowsMultipleSelection {
                                     selection.removeAll()
                                 }
                                 
@@ -52,7 +52,7 @@ public struct GridSelectionView<SelectionValue>: View where SelectionValue: Iden
                                     selection.insert(option)
                                 }
                                 
-                                if !customPickerStyle.allowsMultipleSelection {
+                                if !multiPickerStyle.allowsMultipleSelection {
                                     presentationMode.wrappedValue.dismiss()
                                 }
                             } label: {
@@ -87,7 +87,7 @@ struct GridSelectionView_Previews: PreviewProvider {
     
     static var previews: some View {
         GridSelectionView(selection: $selectedOptions,
-                          customPickerStyle: GridPickerStyle(),
+                          multiPickerStyle: GridPickerStyle(),
                           options: ["": options]) {
             $0
         }

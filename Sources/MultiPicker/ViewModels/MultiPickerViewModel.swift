@@ -1,5 +1,5 @@
 //
-//  CustomPickerViewModel.swift
+//  MultiPickerViewModel.swift
 //  
 //
 //  Created by Anika Seibezeder on 13.05.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CustomPickerViewModel<SelectionValue>: NSObject where SelectionValue: Hashable {
+class MultiPickerViewModel<SelectionValue>: NSObject where SelectionValue: Hashable {
 
     // MARK: - Private properties
 

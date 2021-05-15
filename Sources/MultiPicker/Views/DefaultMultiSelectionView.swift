@@ -1,5 +1,5 @@
 //
-//  DefaultCustomSelectionView.swift
+//  DefaultMultiSelectionView.swift
 //  
 //
 //  Created by Anika Seibezeder on 13.05.21.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct DefaultCustomSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
+public struct DefaultMultiSelectionView<SelectionValue>: View where SelectionValue: Identifiable & Hashable {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Binding var selection: Set<SelectionValue>
-    var customPickerStyle: DefaultCustomPickerStyle
+    var multiPickerStyle: DefaultMultiPickerStyle
     var options: [String: [SelectionValue]]
     var optionToString: (SelectionValue) -> String
 
@@ -27,7 +27,7 @@ public struct DefaultCustomSelectionView<SelectionValue>: View where SelectionVa
                 }) {
                     ForEach(options[section] ?? []) { option in
                         Button {
-                            if !customPickerStyle.allowsMultipleSelection {
+                            if !multiPickerStyle.allowsMultipleSelection {
                                 selection.removeAll()
                             }
                             
@@ -37,7 +37,7 @@ public struct DefaultCustomSelectionView<SelectionValue>: View where SelectionVa
                                 selection.insert(option)
                             }
                             
-                            if !customPickerStyle.allowsMultipleSelection {
+                            if !multiPickerStyle.allowsMultipleSelection {
                                 presentationMode.wrappedValue.dismiss()
                             }
                         } label: {
@@ -61,7 +61,7 @@ public struct DefaultCustomSelectionView<SelectionValue>: View where SelectionVa
     }
 }
 
-struct DefaultCustomSelectionView_Previews: PreviewProvider {
+struct DefaultMultiSelectionView_Previews: PreviewProvider {
     static let options = [
         "Option 1",
         "Option 2",
@@ -71,8 +71,8 @@ struct DefaultCustomSelectionView_Previews: PreviewProvider {
     @State static var selectedOptions = Set<String>()
 
     static var previews: some View {
-        DefaultCustomSelectionView(selection: $selectedOptions,
-                            customPickerStyle: DefaultCustomPickerStyle(),
+        DefaultMultiSelectionView(selection: $selectedOptions,
+                            multiPickerStyle: DefaultMultiPickerStyle(),
                             options: ["": options]) {
             $0
         }
